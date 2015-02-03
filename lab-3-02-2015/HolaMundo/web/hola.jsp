@@ -17,19 +17,22 @@
           Bienvenido <%=nombre%>
     </h1>
 
-    <form action="hola.jsp">
+    <form action="hola.jsp" method="post">
       Dame tu nombre: <input type="text" name="nombre"/><br/>
-      Dame tu contraseña: <input type="password" nombre="password"/><br/>
+      Dame tu contraseña: <input type="password" name="password"/><br/>
       <input type="submit"/>
     </form>
 
     <%
         String nombre2 = request.getParameter("nombre");
         String pass = request.getParameter("password");
-        if(nombre2 != null && !nombre2.equals("")){
-            out.println("Qué aburrido eres "+nombre2);
-            out.println("Tu password es: "+pass);
+        if(nombre2 != null && !nombre2.equals("")
+            && pass != null && !pass.equals("")){
+            request.setAttribute("nombre", nombre2);
+            request.setAttribute("password", pass);
+            response.sendRedirect("aburridoooo");
         }
+
     %>
 
   </body>
