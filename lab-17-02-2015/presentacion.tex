@@ -1,0 +1,79 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usetheme{Goettingen}
+\usecolortheme{default}
+\useoutertheme{shadow}
+\useinnertheme{rectangles}
+\graphicspath{ {./figures/} }
+\title[Sesiones]{Sesiones con Java}
+\subtitle{Ingeniería de Software}
+\author[Miguel]{Miguel Angel Piña Avelino}
+\institute[UNAM]{
+  Facultad de Ciencias, UNAM
+}
+\date{\today}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+  \frametitle{Índice}
+  \tableofcontents
+\end{frame}
+
+\section{Introducción}
+\begin{frame}
+  \frametitle{Introducción}
+  Hoy vamos a comenzar a trabajar con sesiones.\\
+  El término sesión se refiere a una serie de interacciones del usuario con la
+  aplicación que son rastreados por el servidor. Las sesiones son usadas para
+  mantener un estado específico del usuario, incluyendo objetos persistentes
+  e identidades de usuario autenticadas.
+\end{frame}
+
+\begin{frame}
+  \frametitle{¿Cómo usar sesiones?}
+  Para crear un objeto de tipo Session, vamos a hacer uso de HTTPServletRequest,
+  a través del método getSession().\\
+  Una vez establecida la sesión, examinaremos y usaremos sus propiedades con una
+  pequeña aplicación.
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Creando o accediendo a una sesión}
+  Para crear una nueva sesión o obtener acceso a una existente, hacemos lo
+  siguiente:
+  \begin{verbatim}
+    HttpSession mySession = request.getSession();
+  \end{verbatim}
+  El método getSession() regresa un objeto de sesión válido asociado con el
+  request. Si utilizamos el método con un parámetro booleano verdadero, este
+  crea la sesión, si usamos falso, no la crea.
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Ejemplo}
+  \begin{verbatim}
+    public void doPost (HttpServletRequest req
+                        , HttpServletResponse res)
+    throws ServletException, IOException{
+        if ( HttpSession session
+                = req.getSession(false) ) {
+           // Sesión recuperada, continua con
+          // las operaciones del servlet
+        }
+        else{
+           // No hay sesión, regresamos un mensaje de error.
+        }
+    }
+  \end{verbatim}
+\end{frame}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
