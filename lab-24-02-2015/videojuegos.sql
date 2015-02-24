@@ -1,6 +1,9 @@
 begin;
 set client_encoding = 'utf-8';
 
+-- Git Flow
+-- http://danielkummer.github.io/git-flow-cheatsheet/
+
 -- alumno
 -- Nombre, apellido1, apellido2
 -- Número de cuenta, correo, promedio
