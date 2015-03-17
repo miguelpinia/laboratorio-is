@@ -10,7 +10,7 @@
     <h1>Bienvenido <%=session.getAttribute("nomUsuario")%></h1>
     <p>
       Hola :D
-      <a href="otrapagina.jsp">Pícame</a> &nbsp; <a href="Logout">Salir</a>
+      <a href="otrapagina.jsp">Pícame</a> &nbsp;   <a href="Logout">Salir</a>
     </p>
 
     <h2>Mensajes del servidor</h2>
