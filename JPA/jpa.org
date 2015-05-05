@@ -1,0 +1,16 @@
+#+TITLE: Introducción a JPA
+#+AUTHOR: Miguel Angel Piña Avelino
+
+* ¿Qué es JPA?
+Java Persistence API (JPA) es una herramienta que provee a los desarrolladores
+java facilidades para realizar mapeos entre relaciones y objetos (object/relational
+mapping) en aplicaciones Java.
+
+* ¿Donde usar JPA?
+
+Para reducir la carga de escribir código para gestiónar la interacción entre la
+base de datos y el código en Java, el trabajo relacional de objetos, un
+programador usa el framework JPA, lo que permite una fácil interacción con
+instancias de base de datos y las aplicaciones en Java.
+
+[[./jpa_provider.png][Flujo de trabajo con JPA.]]
