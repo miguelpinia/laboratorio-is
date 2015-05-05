@@ -12,6 +12,10 @@
         <servlet-name>ListaImagenes</servlet-name>
         <servlet-class>view.ListaImagenes</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Documentos</servlet-name>
+        <servlet-class>view.Documentos</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Imagen</servlet-name>
         <url-pattern>/Imagen</url-pattern>
@@ -23,6 +27,18 @@
     <servlet-mapping>
         <servlet-name>ListaImagenes</servlet-name>
         <url-pattern>/ListaImagenes</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Documentos</servlet-name>
+        <url-pattern>*.jpg</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Documentos</servlet-name>
+        <url-pattern>*.pdf</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Documentos</servlet-name>
+        <url-pattern>*.png</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

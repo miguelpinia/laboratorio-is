@@ -177,6 +177,13 @@ public class ImagenJpaController implements Serializable {
         }
     }
 
+    public Imagen findDocumento(String url) {
+        EntityManager em = getEntityManager();
+        Query q = em.createNamedQuery("Imagen.findByRuta");
+        q.setParameter("ruta", url);
+        return (Imagen) q.getResultList().get(0);
+    }
+
     public Imagen findImagen(String name) {
         EntityManager em = getEntityManager();
         Query q = em.createNamedQuery("Imagen.findByNombre");
